@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: CollectablesDataBase
   m_EditorClassIdentifier: 
   CollectablesDataBase:
-  - collectablePrefab: {fileID: 3526369911475716514, guid: ee249e03fdc345b4aa70bf736112d899, type: 3}
+  - onclickCollisionAudio: {fileID: 8300000, guid: 0635204aef7f3264480c8ec9895a0c8e, type: 3}
+    collectablePrefab: {fileID: 3526369911475716514, guid: ee249e03fdc345b4aa70bf736112d899, type: 3}
     particlesOnDestroy: {fileID: 8428519831470489182, guid: d1f49c4b193aca54e9d3912657d04e50, type: 3}
     typeActionCollectable: 0
     valueToRestOrAdd: 5
-  - collectablePrefab: {fileID: 8412625052765245742, guid: 565f83e5387b9d2489767652602ce014, type: 3}
+  - onclickCollisionAudio: {fileID: 8300000, guid: f064c3f2ca4efa94f900673d38736d22, type: 3}
+    collectablePrefab: {fileID: 8412625052765245742, guid: 565f83e5387b9d2489767652602ce014, type: 3}
     particlesOnDestroy: {fileID: 8428519831470489182, guid: d1f49c4b193aca54e9d3912657d04e50, type: 3}
     typeActionCollectable: 1
     valueToRestOrAdd: 3

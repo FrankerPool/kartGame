@@ -13,6 +13,7 @@ public class CollectibleItemsDataBase : ScriptableObject
 [System.Serializable]
 public class Collectable
 {
+    public AudioClip onclickCollisionAudio;
     public GameObject collectablePrefab;
     public GameObject particlesOnDestroy;
     public TypeActionCollectable typeActionCollectable;

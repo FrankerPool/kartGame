@@ -18,7 +18,8 @@ public class AppleManager : MonoBehaviour
         apple.GetComponent<CollectableBehaviour>().setMyInfo(
                    collectibleItemsDataBase.CollectablesDataBase[randomObj].typeActionCollectable,
                    collectibleItemsDataBase.CollectablesDataBase[randomObj].valueToRestOrAdd,
-                   collectibleItemsDataBase.CollectablesDataBase[randomObj].particlesOnDestroy
+                   collectibleItemsDataBase.CollectablesDataBase[randomObj].particlesOnDestroy,
+                   collectibleItemsDataBase.CollectablesDataBase[randomObj].onclickCollisionAudio
                    );
     }
 }
