@@ -12,15 +12,18 @@ public class SoundManager : MonoBehaviour
     {
         instanceSoundManager = this;
     }
+    //use when click a btn
     public void onclickBTNSound()
     {
         onclickBTN.Play();
     }
+    //use when a apple is destroy
     public void onCollisionApple(AudioClip sound)
     {
         onCollisionAppleSound.clip = sound;
         onCollisionAppleSound.Play();
     }
+    //use when the game is finish
     public void stopCarEngineSound()
     {
         engineCarSound.Stop();

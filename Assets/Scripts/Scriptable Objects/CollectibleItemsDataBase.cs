@@ -8,6 +8,7 @@ public enum TypeActionCollectable
 [CreateAssetMenu(fileName = "CollectablesDataBase", menuName = "Database/Collectables")]
 public class CollectibleItemsDataBase : ScriptableObject
 {
+    //collection of collectables - editable in inspector, when you create a new data base
     public Collectable[] CollectablesDataBase;
 }
 [System.Serializable]

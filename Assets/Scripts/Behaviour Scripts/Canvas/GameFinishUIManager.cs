@@ -13,18 +13,22 @@ public class GameFinishUIManager : MonoBehaviour
     {
         instanceGameFinishUIManager = this;
     }
+    //active the lose canvas
     public void GameOverLose()
     {
         canvasLose.SetActive(true);
     }
+    //active win canvas
     public void GameOverWin()
     {
         canvasWin.SetActive(true);
     }
+    //update text points
     public void updatePoints(int curentPoints)
     {
         pointsTXT.text = curentPoints.ToString();
     }
+    //onclick btn menu return menu
     public void OnclickBTNMenu()
     {
         GameManager.instanceGameManager.resetGame();

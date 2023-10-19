@@ -16,16 +16,21 @@ public class WheelController : MonoBehaviour
     [SerializeField] public Transform transformbackRightWheel;
     [SerializeField] public Transform transformbackLeftWheel;
     //
-    [Tooltip("")]
+    [Tooltip("Wheel rotation angle")]
     public float maxTurnAngle= 15f;
-    [Tooltip("")]
-    public float aceleration = 10f;
-    [Tooltip("")]
+    [Tooltip("vehicle tire speed")]
+    public float aceleration = 100f;
+    [Tooltip("braking force on the tires")]
     public float breakingForce = 100f;
     //
     private float currentAceleration = 0f;
     private float currentBreakForce = 0f;
     private float currentTurnAngle = 0f;
+
+    //the audio source in fbx manager
+    public AudioSource audioSourceEngine;
+    private float minPitch = 0.5f;
+    private float pitchFromCar = 0;
     private void Start()
     {
         audioSourceEngine.pitch = minPitch;
@@ -87,13 +92,10 @@ public class WheelController : MonoBehaviour
         objectWheelTransform.position = position;
         objectWheelTransform.rotation = rotation;
     }
-    public AudioSource audioSourceEngine;
-    private float minPitch = 0.5f;
-    private float pitchFromCar = 0;
     //
     public void soundEngineCar()
     {
-        //
+        //obtain a value to pitch in audio source on acceleration base
         pitchFromCar = (currentAceleration * 3.6f) /breakingForce;
         if (pitchFromCar < minPitch)
             audioSourceEngine.pitch = minPitch;

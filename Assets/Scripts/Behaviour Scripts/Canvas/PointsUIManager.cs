@@ -11,6 +11,7 @@ public class PointsUIManager : MonoBehaviour
     {
         instancePointsUIManager = this;
     }
+    //update points on canvas
     public void updatePoints(int curentPoints)
     {
         pointsTXT.text = curentPoints.ToString();

@@ -10,7 +10,7 @@ public class AppleManager : MonoBehaviour
     {
         appleManagerInstance = this;
     }
-
+    //instantiate random item and set the info in the script whit info in collection
     public void spawnRandomCollectable(Transform position)
     {
         int randomObj = Random.Range(0,collectibleItemsDataBase.CollectablesDataBase.Length);

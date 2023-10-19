@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+    //call this event when lose game
     public void GameOver()
     {
         GameFinishUIManager.instanceGameFinishUIManager.GameOverLose();
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         currentGameState = GameState.gameOver;
         Time.timeScale = 0;
     }
+    //get actuall points and set the initial game state
     public void initGame()
     {
         PointsUIManager.instancePointsUIManager.updatePoints(points);
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
         //recargo la scena del juego
         SceneManager.LoadScene(0);
     }
+    //call this event when win game
     public void winGame()
     {
         SoundManager.instanceSoundManager.stopCarEngineSound();
@@ -47,18 +50,22 @@ public class GameManager : MonoBehaviour
         currentGameState = GameState.gameOver;
         Time.timeScale = 0;
     }
+    //add points and check current points
     public void addPoints(int value)
     {
         points += value;
+        //update ui points
         PointsUIManager.instancePointsUIManager.updatePoints(points);
         if (points >= targetPoints)
             winGame();
     }
+    //rest points and check current points
     public void restPoints(int value)
     {
         points -= value;
+        //update ui points
         PointsUIManager.instancePointsUIManager.updatePoints(points);
-        if (points < 0)
+        if (points <= 0)
             GameOver();
     }
 }
