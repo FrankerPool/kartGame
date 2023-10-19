@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class WheelController : MonoBehaviour
 {
-    //
+    //compoenent type whelcollider in car
     [SerializeField] public WheelCollider frontRightWheel;
     [SerializeField] public WheelCollider frontLeftWheel;
     [SerializeField] public WheelCollider backRightWheel;
     [SerializeField] public WheelCollider backLeftWheel;
 
-    //
+    //gameobject wheels in car
     [SerializeField] public Transform transformfrontRightWheel;
     [SerializeField] public Transform transformfrontLeftWheel;
     [SerializeField] public Transform transformbackRightWheel;
@@ -26,12 +26,18 @@ public class WheelController : MonoBehaviour
     private float currentAceleration = 0f;
     private float currentBreakForce = 0f;
     private float currentTurnAngle = 0f;
+    private void Start()
+    {
+        audioSourceEngine.pitch = minPitch;
+    }
     private void FixedUpdate()
     {
         if (GameManager.instanceGameManager.currentGameState == GameState.inGame)
         {
+            //get the current pitch from the acceleration on car
+            soundEngineCar();
+
             //Obtain acceleration of the vertical axis by pressing the w and s keys forward or backward.
-            //currentAceleration = aceleration * Input.GetAxis("Vertical");
             currentAceleration = aceleration * (Input.GetAxis("Vertical"));
 
             //press space to give current breakingforce a value
@@ -80,5 +86,18 @@ public class WheelController : MonoBehaviour
         //set wheel transform state
         objectWheelTransform.position = position;
         objectWheelTransform.rotation = rotation;
+    }
+    public AudioSource audioSourceEngine;
+    private float minPitch = 0.5f;
+    private float pitchFromCar = 0;
+    //
+    public void soundEngineCar()
+    {
+        //
+        pitchFromCar = (currentAceleration * 3.6f) /breakingForce;
+        if (pitchFromCar < minPitch)
+            audioSourceEngine.pitch = minPitch;
+        else
+            audioSourceEngine.pitch = pitchFromCar;
     }
 }
