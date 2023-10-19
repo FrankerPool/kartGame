@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc95dcedd8a581468a16897fe63c8ab, type: 3}
+  m_Name: CollectablesDataBase
+  m_EditorClassIdentifier: 
+  CollectablesDataBase:
+  - collectablePrefab: {fileID: 3526369911475716514, guid: ee249e03fdc345b4aa70bf736112d899, type: 3}
+    particlesOnDestroy: {fileID: 8428519831470489182, guid: d1f49c4b193aca54e9d3912657d04e50, type: 3}
+    typeActionCollectable: 0
+    valueToRestOrAdd: 5
+  - collectablePrefab: {fileID: 8412625052765245742, guid: 565f83e5387b9d2489767652602ce014, type: 3}
+    particlesOnDestroy: {fileID: 8428519831470489182, guid: d1f49c4b193aca54e9d3912657d04e50, type: 3}
+    typeActionCollectable: 1
+    valueToRestOrAdd: 3
