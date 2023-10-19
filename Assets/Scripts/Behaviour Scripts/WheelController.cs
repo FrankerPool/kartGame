@@ -43,13 +43,16 @@ public class WheelController : MonoBehaviour
             soundEngineCar();
 
             //Obtain acceleration of the vertical axis by pressing the w and s keys forward or backward.
+            if(!Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.UpArrow))
+                if (currentAceleration > 0)
+                    currentAceleration--;
             currentAceleration = aceleration * (Input.GetAxis("Vertical"));
 
             //press space to give current breakingforce a value
             if (Input.GetKey(KeyCode.Space))
                 useBreakForce();
             else
-                currentBreakForce = 0f;
+                currentBreakForce = 0;
 
             //apply the acceleration to the front wheels
             frontLeftWheel.motorTorque = currentAceleration;
