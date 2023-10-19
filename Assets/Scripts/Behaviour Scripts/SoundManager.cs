@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public AudioSource onclickBTN;
     public AudioSource onCollisionAppleSound;
+    public AudioSource engineCarSound;
     static public SoundManager instanceSoundManager;
     private void Awake()
     {
@@ -19,5 +20,9 @@ public class SoundManager : MonoBehaviour
     {
         onCollisionAppleSound.clip = sound;
         onCollisionAppleSound.Play();
+    }
+    public void stopCarEngineSound()
+    {
+        engineCarSound.Stop();
     }
 }

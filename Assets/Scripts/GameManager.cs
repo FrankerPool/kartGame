@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         GameFinishUIManager.instanceGameFinishUIManager.GameOverLose();
+        SoundManager.instanceSoundManager.stopCarEngineSound();
         currentGameState = GameState.gameOver;
         Time.timeScale = 0;
     }
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
     }
     public void winGame()
     {
+        SoundManager.instanceSoundManager.stopCarEngineSound();
         GameFinishUIManager.instanceGameFinishUIManager.GameOverWin();
         GameFinishUIManager.instanceGameFinishUIManager.updatePoints(points);
         currentGameState = GameState.gameOver;
